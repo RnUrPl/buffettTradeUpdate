@@ -169,7 +169,7 @@ $('.team-slider').on('afterChange', function(event, slick,currentSlide) {
   } else {
     $(".prev").prop('disabled', false).css('visibility', 'visible');
   }
-  if ((currentSlide === 8 && $(window).width() > 769 &&  $(window).width() < 992)||  currentSlide === 6 ||  (currentSlide === 7 && $(window).width() > 992 &&  $(window).width() < 1250)) {
+  if ((currentSlide === 8 && $(window).width() > 769 &&  $(window).width() < 992)||  (currentSlide === 6 &&  $(window).width() > 1250)||  (currentSlide === 7 && $(window).width() > 992 &&  $(window).width() < 1250)) {
     $(".next").prop('disabled', true).css('visibility', 'hidden');
       jumpBack();
   }
