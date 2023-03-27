@@ -1,3 +1,4 @@
+
 // Timer
 isSail = false
 $(window).on('load', function() {
@@ -66,7 +67,9 @@ $(window).on('load resize', function() {
   } else {
     $('.tg-btn').html("Telegram chanel");
   }
+  $('.tg-btn').css('opacity', '1').fadeIn(300);
 });
+
 
 // Offer video
 
@@ -106,16 +109,17 @@ $('.offer__btn').ready(function() {
 
 const swiper = new Swiper('.sample-slider', {
   centeredSlides:true,
-  infinite:true,
-  width: 150,
-  spaceBetween: 36,
+
+  // width: 150,
+  // spaceBetween: 36,
     loop: true,
-    speed: 6000,
-    slidesPerView: 5,      
+    speed: 3000,
+    slidesPerView: 7,      
     autoplay: {
         delay: 0,
     },
 })
+
 
 
 // Team slider
@@ -126,25 +130,23 @@ $('.team-slider').slick({
   nextArrow: "<i class='icon-arrow next'></i>",
   slidesToShow: 4,
   slidesToScroll: 1,
-  responsive: [
+  responsive: [ 
+  
     {
       breakpoint: 1250,
       settings: {
-        arrows:false,
         slidesToShow: 3
       }
     },
     {
       breakpoint: 992,
       settings: {
-        arrows:false,
         slidesToShow: 2
       }
     },
     {
       breakpoint: 768,
       settings: {
-        arrows:false,
         arrows:false,
         slidesToShow: 1,
         // centerMode:true,
@@ -169,7 +171,7 @@ $('.team-slider').on('afterChange', function(event, slick,currentSlide) {
   } else {
     $(".prev").prop('disabled', false).css('visibility', 'visible');
   }
-  if ((currentSlide === 9 && $(window).width() > 768 &&  $(window).width() < 992)||  (currentSlide === 6 &&  $(window).width() > 1250)||  (currentSlide === 7 && $(window).width() > 992 &&  $(window).width() < 1250)) {
+  if ((currentSlide === 8 && $(window).width() > 768 &&  $(window).width() < 992)||  (currentSlide === 6 &&  $(window).width() > 1250)||  (currentSlide === 7 && $(window).width() > 992 &&  $(window).width() < 1250) ||  (currentSlide === 9 &&  $(window).width() < 768) ) {
     $(".next").prop('disabled', true).css('visibility', 'hidden');
       jumpBack();
   }

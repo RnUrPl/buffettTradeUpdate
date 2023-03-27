@@ -17,13 +17,13 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <body>
-    <div class="layer0 _animate _anim-no-hide"></div>
+
 <!-- Offer -->
 <section id="offer" class="section offer">
     <div class="container offer__container">
         <nav class="nav">
-            <ul class="nav__list _animate _animate-bottom">
-                <li class="logo">
+            <ul class="nav__list ">
+                <li class="logo _animate _animate-bottom">
                     <a href="" class="logo__link">
                         <div class="img-wrapper logo__wrapper">
                             <img src="img/logo.png" alt="Buffett Trade" class="logo__img">
@@ -32,7 +32,7 @@
                     
                 </li>
                 
-                <li class="tg-btn-wrapper">
+                <li class="tg-btn-wrapper _animate ">
                     <a href="https://t.me/buffet_trades" class="tg-btn"> 
                         Telegram channel
                     </a>
@@ -42,20 +42,20 @@
 
         <div class="offer__row">
             <div class="offer__content">
-                <h1 class="section-title offer__title   ">
+                <h1 class="section-title offer__title _animate _animate-left ">
                     We will pay you <br> the money in any <br> situation if the signal was negative.
                 </h1>
                 <div class="offer__content _animate _animate-left">
                     <p class="offer__text">We have been on the market for over 10 years and are the only company that is fully responsible for your funds and guarantees a refund from negative signals. <br> Regardless of what caused it, we take all the risks on ourselves.</p>
                     <p class="offer__text">This all works perfectly because with each transaction, we set aside a portion of the funds into an insurance fund. In this way, we create a safety cushion for our clients and ourselves, and in the event of any unforeseen situations in the market, you will always receive compensation.</p>    
                 </div>
-                <button id="offer__btn"class="btn offer__btn _animate _animate-top">Find out more</button>
+                <button id="offer__btn"class="ask_btn offer__btn _animate _animate-top">Find out more</button>
             </div>
-            <div class="offer__video video">
+            <div class="offer__video video _animate _anima">
                 <div id="offerVideoPlay" class="video__play">
                     <i class="icon-play"></i>
                 </div>
-                <video id="offerVideo" class="video _animate _animate_left" poster="img/about-container-bg.jpg" src="img/offer-video.webm">
+                <video id="offerVideo" class="video " poster="img/about-container-bg.jpg" src="img/offer-video.webm">
                     
                 </video>
                 <a href="#prices" class="btn video__btn">
@@ -77,6 +77,14 @@
 
     <div class="swiper sample-slider">
         <div class="swiper-wrapper">
+            <div class="swiper-slide" ><img src="./img/partner1.png" alt="AMG"></div>
+            <div class="swiper-slide"><img src="./img/partner2.png" alt="Alpari"></div>
+            <div class="swiper-slide"><img  src="./img/partner3.png" alt="AHW"></div>
+            <div class="swiper-slide"><img  src="../img/partner4.png" alt="BSG"></div>
+            <!-- <div class="swiper-slide"><img  src="../img/partner5.png" alt="bybit"></div> -->
+            <div class="swiper-slide"><img  src="./img/partner6.png" alt="Chrales"></div>
+            <div class="swiper-slide"><img  src="./img/partner7.png" alt="exness"></div>
+            <div class="swiper-slide"><img  src="./img/partner8.png" alt="andresson"></div>
             <div class="swiper-slide" ><img src="./img/partner1.png" alt="AMG"></div>
             <div class="swiper-slide"><img src="./img/partner2.png" alt="Alpari"></div>
             <div class="swiper-slide"><img  src="./img/partner3.png" alt="AHW"></div>
@@ -113,7 +121,7 @@
     <div class="container team__container">
         
         <ul class="team-slider team__slider">
-            <li class="team-slider__item">
+            <li class="team-slider__item ">
                 <div style="text-align: center ;">
                 <div class="team-member">
                     <div class="img-wrapper team-member__img-wrapper">
@@ -324,7 +332,7 @@
                     <p class="advantage__text">
                         We conclude a contract with all our clients and send the original to any part of the world, which serves as proof that we are obliged to fulfill all obligations on our part and provide services of the highest quality.            
                     </p>
-                    <a href="contract.pdf" class="btn advantage__btn">View contract</a>
+                    <a href="contract.pdf" class="btn advantage__btn" target="_blank">View contract</a>
                 </div>
             </li>
         </ul>
@@ -1156,6 +1164,40 @@
 
     <!-- main.js -->
     <script src="js/js.js"></script>
+    <script>
+       const section = document.querySelector('.counts');
+const counts = document.querySelectorAll('.count__number');
+const speed = 150; // adjust this value to control the animation speed
 
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounts();
+      observer.unobserve(entry.target);
+    }
+  });
+});
+
+observer.observe(section);
+
+function animateCounts() {
+  counts.forEach((count) => {
+    const target = parseInt(count.innerText.replace(/,/g, ''));
+    const increment = Math.ceil(target / speed);
+
+    let current = 0;
+    const timer = setInterval(() => {
+      current += increment;
+      count.innerText = current.toLocaleString();
+      if (current >= target) {
+        clearInterval(timer);
+        count.innerText = target.toLocaleString();
+      }
+    }, 30);
+  });
+}
+
+
+      </script>
 </body>
 </html>
