@@ -97,7 +97,7 @@
 .offer__video {
     border-radius: 30px;
     background-color: #7E7D83;
-    
+    -webkit-transition: all 0.2s ease;
 }
 .video {
     display: flex;
@@ -105,6 +105,8 @@
     position: relative;
     aspect-ratio: 9 / 16;
     overflow: hidden;
+    transition: all $transition-time ease;
+
 
     &__play {
         z-index: 2;

@@ -502,12 +502,20 @@ a, a:hover, a:active {
 }
 
 .img {
-  width: auto;
-  height: auto;
-  max-width: 268px;
-  max-height: 379px;
-  -o-object-fit: cover;
-     object-fit: cover;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+
+
+.teamimg{
+    width: 278px;
+    height: 379px;
+    -o-object-fit: cover;
+    object-fit: cover;
+
 }
 
 .img-wrapper {
@@ -653,6 +661,8 @@ a, a:hover, a:active {
 .offer__video {
   border-radius: 30px;
   background-color: #7E7D83;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
 }
 
 .video {
@@ -665,6 +675,8 @@ a, a:hover, a:active {
   position: relative;
   aspect-ratio: 9/16;
   overflow: hidden;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 .video__play {
   z-index: 2;
@@ -1440,6 +1452,16 @@ margin: 0 10px;
 .student__text {
   margin-bottom: 20px;
 }
+
+.studentimg{
+    width: auto;
+    height: auto;
+    min-width: 268px;
+    min-height: 379px;
+    -o-object-fit: cover;
+    object-fit: cover;
+
+}
 .student__btn {
   display: none;
   cursor: pointer;
@@ -1595,10 +1617,20 @@ margin: 0 10px;
     display: block;
     position: relative;
   }
+  .studentimg{
+    width: auto;
+    height: auto;
+    max-width: 268px;
+    max-height: 379px;
+    -o-object-fit: cover;
+    object-fit: cover;
+
+}
   .student__photo {
     margin-right: 0;
     margin-bottom: 30px;
   }
+  
   .student__name {
     margin-top:20px;
     text-align: right;
@@ -1797,6 +1829,7 @@ margin: 0 10px;
 }
 
 .tariff-tabs__item {
+  /* height: 555px; */
   -webkit-box-flex: 0;
       -ms-flex: 0 1 335px;
           flex: 0 1 335px;
@@ -1836,7 +1869,7 @@ margin: 0 10px;
   line-height: 32px;
 }
 .tariff_pink .tariff_list-text {
-  margin-top: 155px;
+  margin-top: 128px;
 }
 .tariff .tariff-tabs__item {
   height: 770px !important;
@@ -2415,12 +2448,9 @@ margin: 0 10px;
 
 }
 
-/* .team__slider{
-  display: flex;
-  overflow-x: scroll;
-  width: 100%;
-} */
-
+.reviewimg{
+  
+}
 
 
 

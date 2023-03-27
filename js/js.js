@@ -2,7 +2,7 @@
 isSail = false
 $(window).on('load', function() {
   setTimeout(function(){
-    lastDay = 23
+    lastDay = 29
     setInterval(function(){
       time = $('#Moscow_z71d span:first-child').html();
       date = $('#Moscow_z71d span:last-child').html();
@@ -155,22 +155,11 @@ $('.team-slider').slick({
   
 });
 
-$(window).on('load', function() {
-  if ($(this).width() < 768) {
-      $('.tg-btn').html("<i class='icon-tg'></i>");
-      $()
-  } else {
-    $('.tg-btn').html("Telegram chanel");
-  }
-});
-
 function jumpBack() {
   setTimeout(function() {
     $('.team-slider').slick("slickGoTo", 0);
   }, 0);
 }
-
-const isClicked = document.getElementById("btn")
 
 
 $('.team-slider').on('afterChange', function(event, slick,currentSlide) {
@@ -180,7 +169,7 @@ $('.team-slider').on('afterChange', function(event, slick,currentSlide) {
   } else {
     $(".prev").prop('disabled', false).css('visibility', 'visible');
   }
-  if (currentSlide === 9 || $(window).width() < 769 && currentSlide === 9 ) {
+  if ((currentSlide === 8 && $(window).width() > 769 &&  $(window).width() < 992)||  currentSlide === 9 ||  currentSlide === 7 && $(window).width() > 992 &&  $(window).width() < 1250) {
     $(".next").prop('disabled', true).css('visibility', 'hidden');
       jumpBack();
   }
