@@ -1,0 +1,412 @@
+
+.students {
+    padding: 75px 0 68px 0;
+    overflow: hidden;
+    
+
+    &__container {
+        padding: 0 60px;
+        overflow: visible;
+    }
+    &__title {
+        text-align: center;
+        margin-bottom: 130px;
+    }
+}
+
+
+
+.students-slider {
+    position: relative;
+    overflow: visible ;
+    .slick-list {
+        overflow: visible ;
+    }
+
+    .slick-slide {
+        opacity: 0.5;
+        transition: opacity $transition-time ease-in-out;
+    }
+
+    .slick-active{
+        opacity: 1;
+    }
+    .slick-track {
+        overflow: visible ;
+    }
+    &__item {
+        margin: 0 30px;
+        overflow: visible;
+    }
+
+
+    .slick-arrow {
+        z-index: 5;
+        cursor: pointer;
+        position: absolute;
+        font-size: 40px;
+        line-height: 40px;
+        color: #3B3E4580;
+        top: 50%;
+    }
+    .prev {
+        left: -50px;
+        
+
+    }
+
+    .next {
+        right: -50px;
+        transform: rotate(180deg);
+        
+    }
+
+}
+
+.student {
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+
+
+    &__ask {
+        white-space: nowrap;
+        background-color: #fff;
+        color: #070A11;
+        padding: 10px 40px;
+        font-weight: 700;
+        border-radius: 30px;
+        width: 151px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    
+   
+    &__subtitle {
+        margin-bottom: 32px;
+        overflow: hidden;
+        
+    }
+
+    &__text {
+        margin-bottom: 20px;
+
+    }
+
+
+    
+    &__btn {
+        display: none;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 23px;
+        
+    }
+
+    &__photo {
+        flex: 0 1 376px;
+        margin-right: 20px;
+        position: relative;
+    }
+
+    &__name {
+        position: absolute;
+
+        font-size: 29px;
+        line-height: 32px;
+        font-weight: 700;
+
+        width: 100%;
+        text-align: center;
+        bottom: -34px;
+        z-index: 2;
+    }
+    
+    &__content {
+        max-width: 512px;
+        position: relative;
+        flex-direction: column;
+        
+        & .student__name {
+           opacity: 0;
+            display: none;
+        }
+        .student__ask {
+            display: none;
+        }
+        &_active {
+            top: 0;
+            z-index: 5;
+            padding: 64px 10px 91px 10px;
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            height: 580px;
+            background-color: #3B3E45;
+            overflow-y: scroll !important;
+            
+
+            .student__text {
+                top: 0;
+                width: 100%;
+                height: auto;
+            }
+
+            .student__subtitle {
+                height: 0;
+            }
+
+            .student__name {
+                
+                display: block;
+                opacity: 1;
+                z-index: 3;
+                
+            }
+
+            .student__ask {
+                
+                display: block;
+                z-index: 3;
+                position: relative;
+                font-size: 10px;
+                text-align: center;
+                padding: 0 0 0 0;
+                width: 75px;
+                margin-top: 35px;
+                
+            }
+
+            &::before {
+                left: 11px !important;
+                top: 0 !important;
+            }
+            &:after {
+                position: static !important;
+                display: block;
+                transform: rotate(180deg) translate(-200px, 40px) !important;
+    
+            }
+        }
+
+        &::before {
+            z-index: 10;
+            right: 0;
+            top: -80px;
+            content: '';
+            width: 35px;
+            height: 50px;
+            position: absolute;
+
+            background-image: url('../img/quotes.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &:after {
+            transform: rotate(180deg);
+            z-index: 10;
+            left: 0;
+            bottom: -80px;
+
+            content: '';
+            width: 35px;
+            height: 50px;
+            position: absolute;
+
+            background-image: url('../img/quotes.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+    }
+}
+
+.student__btn_active {
+    position: relative !important;
+    top: -0px;
+    z-index: 10;
+    display: block;
+}
+
+@media screen and (max-width: 992px) {
+    .students {
+        padding: 42px 0 0 0;
+
+        &__container {
+            padding: 0 50px;
+        }
+        &__title {
+            margin-bottom: 23px;
+        }
+    }
+
+    .student {
+        &__container {
+            padding: 0 25px;
+        }
+        &__content {
+            flex: 0 1 50%;
+        }
+
+    }
+
+    // .students-slider {
+    //     .slick-arrow {
+    //         display: none;
+    //     }
+    // }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .students-slider {
+        &__item {
+            margin: 0 10px;
+        }
+    }
+    
+    .student {
+        width: 100%;
+        max-width: 293px;
+        overflow: visible;
+        display: block;
+        position: relative;
+        
+        
+        &__photo {
+            margin-right: 0;
+            margin-bottom: 70px;
+
+            
+        }
+        &__name {
+            text-align: right;
+            font-size: 20px;
+            line-height: 25px;
+        }
+        &__content {
+            overflow-y: visible;
+            margin: 0 auto;
+            margin-bottom: 34px;
+
+
+            &::before {
+                left: 0;
+                top: -40px;
+            }
+
+            &::after {
+                right: 0;
+                bottom: -16px;
+                left: auto;
+            }
+             & .student__name {
+                    position: absolute;
+
+                    display: block;
+                    text-align: right;
+                    top: 15px;
+  
+                    right: 10px;
+                    top: 15px;
+                    z-index: 2;
+             }
+        }
+        &__subtitle {
+            text-align: center;
+            margin-bottom: 0;
+
+            font-size: 18px;
+            line-height: 25px;
+
+            margin-bottom: 0;
+        }
+    
+        &__text {
+            text-align: justify;
+            margin-bottom: 20px;
+
+            
+            height: 0;
+            
+            overflow: hidden;
+
+            background-color: #3B3E45;;
+
+            
+    
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+
+        &__btn {
+            display: inline-block;
+            border-radius: 30px;
+            padding: 5px 20px;
+            background-color: rgba(59, 62, 69, 0.5);
+            font-weight: 700;
+
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            z-index: 3;
+
+
+            &:hover {
+                background-color: transparent;
+            }
+
+        }
+
+    }
+    .students-slider {
+        margin: 0 auto;
+        overflow: visible;
+        max-width: 290px;
+
+        & .slick-list {
+            overflow: visible;
+        }
+
+
+    }
+
+}
+
+.team-slider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.team-slider__item {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .team-slider {
+    flex-wrap: nowrap;
+  }
+  
+  .team-slider__item {
+    width: calc(33.33333% - 20px);
+    margin-bottom: 0;
+  }
+  
+  .team-slider__item:first-child {
+    margin-left: 0;
+  }
+  
+  .team-slider__item:last-child {
+    margin-right: 0;
+  }
+}

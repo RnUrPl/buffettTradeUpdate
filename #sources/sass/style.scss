@@ -1,0 +1,267 @@
+/*normolize*/
+
+@import "normolize.scss";
+
+
+/*Fonts*/
+
+@import "fonts.scss";
+
+
+// Переменные
+
+$font: "Arsenal", "Arial", sans-serif;
+$text-size: 16px;
+
+$dark: #070A11;
+
+$bright: #F5F3EE;
+
+$transition-time: .2s;
+
+$box-shadow: 0px 0px 10px 5px rgba(34, 60, 80, 0.2);
+
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize, $psLineHeight, $mobLineHeight) {
+ 	$addSize: $pcSize - $mobSize;
+	$addMobSize: $addSize + $addSize * 0.7;
+
+	$addHeight: $psLineHeight - $mobLineHeight;
+	$addMobHeight: $addHeight + $addHeight * 0.7;
+	
+ 	$maxWidth: $maxWidth - 390;
+
+	@media screen and (max-width: 768px) {
+		font-size: calc(#{$mobSize+px} + #{$addSize} * ((100vw - 390px) / #{$maxWidth}));
+		line-height: calc(#{$mobLineHeight+px} + #{$addMobSize} * ((100vw - 390px) / #{$maxWidth}));
+	}
+	@media screen and (min-width: 768px) {
+		font-size: calc(#{$mobSize+px} + #{$addMobSize} * ((100vw - 390px) / #{$maxWidth}));
+		line-height: calc(#{$mobLineHeight+px} + #{$addMobHeight} * ((100vw - 390px) / #{$maxWidth}));
+	}
+
+	@media screen and (min-width: #{$maxWidth+px}) {
+		font-size: #{$pcSize+px};
+		line-height: #{$psLineHeight+px};
+	}
+
+}
+
+
+/*Specification*/
+
+
+*{
+	box-sizing: border-box;
+}
+
+*:focus {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+body{
+	font-family: $font;
+
+	margin: 0;
+
+	line-height: 20px;
+
+	background-color: $dark;
+	overflow-x: hidden;
+
+	font-size: $text-size;
+	color: $bright;
+	font-weight: 400;
+}
+
+section, form{
+	overflow-x: hidden;
+}
+
+.container{
+	margin: 0 auto;
+	padding: 0 25px;
+	max-width: 1150px;
+	width: 100%;
+	height: 100%;
+}
+
+a {
+	display: inline-block;
+}
+
+ul, li{
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+	margin: 0;
+	padding: 0;
+	line-height: 1.2em;
+	text-align: center;
+}
+
+p{
+	text-align: left;
+}
+
+
+.section-title{
+	@include adaptiv-font(50, 35, 72, 42);
+	font-weight: 700;
+	text-align: left;
+	line-height: 72px;
+}
+
+
+.subtitle{
+	@include adaptiv-font(29, 20, 32, 25);
+	color: #fff;
+	font-weight: 600;
+	text-align: left;
+}
+
+
+a, a:hover, a:active{
+	text-decoration: none;
+}
+
+.btn{
+	background-color: rgba(59, 62, 69, 0.5);
+	font-weight: 700;
+	font-size: 29px;
+
+	transition: all $transition-time ease;
+
+
+	color: $bright;
+	
+	
+	
+	border-radius: 40px;
+	cursor: pointer;
+  	line-height: 31px;
+  	padding: 15px 50px;
+	text-align: center;
+	}
+	
+
+.btn:hover {
+	background-color: transparent;
+	color: #fff;
+}
+
+.section {
+	border-top: 1px solid rgba($color: #fff, $alpha: 0.1);
+	border-bottom: 1px solid rgba($color: #fff, $alpha: 0.1);
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-wrapper {
+	overflow: hidden
+}
+
+._active {
+    display: block !important;
+}
+
+
+._d-block {
+	display: block !important;
+}
+._d-none {
+	display: none !important;	
+}
+
+
+
+@media screen and (max-width: 1120px) {
+	.section-title {
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	._active {
+		display: flex !important;
+	}
+}
+
+
+
+@import "_offer";
+
+@import "_about";
+@import '_team';
+
+@import "_partners";
+
+
+
+
+
+@import "_counts";
+@import "_advantages";
+@import "_students";
+
+@import "_prices";
+@import '_reviews';
+
+
+
+._animate {
+	transition: all 0.5s ease;
+	opacity: 0;
+}
+
+._animate-left {
+	transform: translateX(-100px);
+}
+
+._animate-right {
+	transform: translateX(100px);
+}
+._animate-bottom {
+	transform: translateY(100%);	
+}
+._animate-top {
+	transform: translateY(-100%);	
+}
+._animate-Active {
+	transform: translateX(0);
+	transform: translate(0);
+	opacity: 1;
+}
+
+
+.layer0 {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	background-color: #3B3E45;
+	z-index: 10;
+	opacity: 1;
+
+}
+
+.layer0._animate {
+	
+	transform: translateY(0);
+	transition: all 1s cubic-bezier(.18,.94,.48,-0.01);
+
+}
+
+.layer0._animate-Active {
+	transform: translateY(100%);
+	opacity: 1;
+
+}

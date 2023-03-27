@@ -1,0 +1,256 @@
+
+.offer {
+    padding: 30px 0 121px 0;
+    background-image: url('../img/offer-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+
+    &__title {
+        margin-bottom: 30px;
+
+        br {
+            display: none;
+        }
+    }
+}
+
+.nav__list {
+    max-width: 476px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    margin-right: 20px;
+    &__link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $bright;
+        font-weight: 700;
+        font-size: 29px;
+        position: relative;
+    
+        &:after {
+            content: 'Buffett Trade';
+            background-color: #3B3E45;
+            padding: 5px 30px 5px 70px;
+            border-radius: 15px;
+            line-height: 31px;
+            position: absolute;
+            left: 35px;
+            white-space: nowrap;;
+        }  
+    }
+    &__wrapper {
+        display: flex;
+        max-width: 101px;
+        max-height: 101px;
+        border-radius: 50%;
+
+    }
+
+    &__img {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.tg-btn {
+    color: $bright;
+    font-weight: 700; 
+}
+
+
+
+.offer__row {
+    min-height: 784px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.offer__content {
+    max-width: 588px;
+    margin-right: 30px;
+}
+
+.offer__content {
+    margin-bottom: 41px;
+}
+.offer__text {
+    margin-bottom: 17px;
+
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    br {
+        display: none;
+    }
+
+}
+
+.offer__video {
+    border-radius: 30px;
+    background-color: #7E7D83;
+    
+}
+.video {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+
+    &__play {
+        z-index: 2;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        height: 100%;
+
+        font-size: 80px;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        background-image: url('../img/poster.webp');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+
+
+        
+        transition: all $transition-time ease;
+
+        &:hover {
+            font-size: 70px;
+            background-size: 105%;
+        }
+       
+    }
+    &__btn {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 29px;
+        opacity: 0;
+        z-index: 3;
+
+        transition: all $transition-time ease;
+    }
+}
+
+
+@media screen and (max-width: 1120px) {
+    .offer__title {
+        text-align: left;
+    }
+    .offer__content {
+        flex: 0 1 50%;
+    }
+
+
+    .offer__title {
+        text-align: left;
+    }
+
+    .offer__video {
+        flex: 0 1 50%;
+        height: auto
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .offer {
+        &__btn {
+            font-size: 20px;
+            line-height: 25px;
+            padding: 10px 40px;
+        }
+    }
+
+    .offer__row {
+        flex-direction: column;
+    }
+    .offer__title {
+        text-align: left;
+    }
+
+    .offer__video {
+        width: 80%;
+        height: auto;
+    }
+}
+
+
+
+@media screen and (max-width: 576px){
+    .offer {
+        background-image: url('../img/offer-bg-mob.jpg');
+        background-position: center;
+        background-size: cover;
+
+        &__title br {
+            display: inline;
+        }
+
+        &__text  {
+            &:last-child {
+                display: none;
+            }
+            br {
+                display: inline;
+                margin-bottom: 20px;
+            }
+            
+        }
+
+        &__btn {
+            margin-bottom: 208px;
+            
+        }
+
+        &__video {
+            width: 97%;
+        }
+    }
+    .nav__list {
+        justify-content: center;
+        margin-bottom: 66px;
+    }
+
+    .logo {
+        width: 246px;
+
+        &__link {
+            font-size: 20px;
+            line-height: 25px;
+        }
+
+        &:after {
+
+        }
+    }
+    .logo__wrapper {
+        width: 63px;
+        height: 63px;
+        
+    
+        
+    }
+
+    .tg-btn {
+        font-size: 37px;
+        line-height: 37px;
+    }
+    
+}

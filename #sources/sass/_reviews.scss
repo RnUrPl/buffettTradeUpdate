@@ -1,0 +1,254 @@
+
+.reviews {
+    padding: 75px 0;
+    &_container {
+    }
+    &__title {
+        margin-bottom: 4px;
+        text-align: center;
+    }
+    &__text {
+        margin-bottom: 43px;
+        line-height: 24px;
+        text-align: center;
+        
+    }
+
+    &__cards {
+        
+        max-width: 2150px;
+        margin: 0 auto;
+        margin-bottom: 36px;
+    }
+
+    &__btn {
+        font-weight: 400;
+        line-height: 24px;
+        padding: 17px 30px;
+        display: block;
+        margin: 0 auto;
+        width: 196px;
+        
+    }
+
+    &__slider {
+        .slick-arrow {
+            font-size: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+}
+
+
+.cards {
+    display: flex;
+    flex-direction: column;
+
+    &_active {
+        .cards__container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .cards__item {
+                flex: 0 1 calc(50% - 68px);
+                margin-bottom: 50px;
+            }
+
+            .review-card:nth-child(2n) {
+                margin-right: 0;
+            }
+
+            .review-card:nth-child(4n+3),
+            .review-card:nth-child(4n+4) {
+                .review-card__column_1 {
+                    order: 2;
+                    margin-right: 0;
+                    margin-left: 30px;
+                }
+            }
+
+        }
+        
+    }
+    &__row {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: 27px;
+        transform: translateX(-50px);
+        width: 120%;
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+
+        &_1 {
+            
+        }
+
+        &_2 {
+            .review-card__column:first-child {
+                order: 2;
+
+                margin-left: 30px;
+                &:first-child {
+                margin-right: 0;
+            }
+
+       
+        }
+            
+        }
+
+    }
+    
+    .cards__row_2 {
+        transform: translateX(-40px);
+    }
+
+    &__item {
+        margin-right: 58px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.cards_mob {
+    &__slider {
+        .slick-arrow {
+            font-size: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+}
+
+
+
+.cards__item_mob-wrapper {
+    &:nth-child(2n) {
+        .review-card-mob__img-wrapper_short {
+            order: -1;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+    }
+
+}
+.cards__item_mob {
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    
+}
+.review-card-mob__img-wrapper {
+    
+    
+
+}
+.review-card-mob__img-wrapper_long {
+    flex: 0 1 calc(46% - 15px);
+    margin-right: 15px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+}
+
+.review-card-mob__img-wrapper_short {
+    flex: 1 1 100%;
+    margin-top: 20px;
+    
+}
+
+.review-card {
+    transition: all .2s ease;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+    max-height: 375px;
+
+    &__column {
+        flex: 1 1 calc(50% - 30px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        margin-right: 30px;
+        &:last-child {
+            margin-right: 0;
+        }
+
+
+        &_1 {
+            flex: 0 0 45%;
+        }
+        &_2 {
+            flex: 0 0 55%;
+        }
+
+    }
+
+
+    &__img-wrapper_long {
+    }
+    
+    &__img-wrapper_short {
+        
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .reviews {
+        padding: 42px 0 55px 0;
+    }
+
+
+    
+    .cards_active .container .review-card:nth-child(2n) {
+        margin-right: 35px;
+      }
+
+      .cards__container .review-card:nth-child(4n+3),
+      .cards__container .review-card:nth-child(4n+4) {
+        .cards__container  .review-card__column_1 {
+                  order: 1;
+                  margin-right: 35px;
+                  margin-left: 30px;
+              }
+          }
+
+          .cards_active .container .review-card:nth-child(4n+3) .review-card__column_1, 
+          .cards_active .container .review-card:nth-child(4n+4) .review-card__column_1 {
+            order: 1;
+
+          }
+
+          
+    .cards__item {
+        margin: 0px 5px 0 25px;
+        display: flex !important;
+        max-width: 100%;
+    }
+    .cards__row {
+        margin-bottom: 11px;
+    }
+    .review-card__column {
+        margin-right: 15px;
+    }
+
+    .cards__row_2 .review-card__column:first-child {
+        margin-left: 15px;
+    }
+    
+}
