@@ -357,6 +357,7 @@ $(window).on('load', function() {
         initialSlide: 1, // set starting slide index to 1 (second slide)
         slidesToShow: 3,
         infinite: false,
+        // fade: true, // add fade effect
         responsive: [
           {
             breakpoint: 768,

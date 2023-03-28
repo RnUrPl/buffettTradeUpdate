@@ -1842,8 +1842,8 @@ margin: 0 10px;
   background-color: grey;
   border-radius: 30px;
   z-index: -1;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .tab-swither__ratio {
   position: absolute;
@@ -2122,6 +2122,8 @@ margin: 0 10px;
   .tab-swither__bg {
     width: 110px;
     left: 0;
+    -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   }
 }
 ._bg_right {
