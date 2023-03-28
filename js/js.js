@@ -443,7 +443,7 @@ $('#reviews__btn').on('click', function() {
         $('.review-card').appendTo('.cards__container')
         } else {
           $('#reviews__btn').text('back')
-          $('.reviews__cards').css('opacity', '1')
+          // $('.reviews__cards').css('opacity', '1')
           $('.reviews__cards').addClass('_d-none')
           $('.cards_mob__slider').removeClass('_d-none')
           $('.cards_mob').css('opacity', '1')
