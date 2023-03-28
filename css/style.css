@@ -2156,7 +2156,7 @@ margin: 0 10px;
   text-align: center;
 }
 .reviews__cards {
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   max-width: 2150px;
   margin: 0 auto;
   margin-bottom: 36px;
@@ -2254,8 +2254,8 @@ margin: 0 10px;
 }
 .cards_mob{
   opacity: 0;
-  -webkit-transition: opacity 0.2s ease;
-  transition: opacity 0.2s ease;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 .cards_mob__slider{
   -webkit-transition: opacity 0.5s ease;

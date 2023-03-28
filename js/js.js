@@ -214,10 +214,6 @@ responsive: [
 });
 
 
-
-
-
-
 $('.student__btn').on('click', function(){
   if($(this).hasClass('student__btn_active')) {
     $(this).removeClass('student__btn_active')
@@ -392,6 +388,10 @@ if ($(window).width() < 768) {
     cssEase: 'ease',
     slidesToShow: 1,
   });
+
+  setTimeout(function () {
+    $('.cards_mob__slider').slick('slickNext');
+  }, 0);
 }
 
 windowWidth = $(window).width()
@@ -410,13 +410,17 @@ $('#reviews__btn').on('click', function() {
           $('.row_3').appendTo('.cards__row_3')
         } else {
           $('.cards_mob').css('opacity', '0')
+          $('.reviews__cards').css('opacity', '0')
           setTimeout(function () {
-  
-            $('.cards_mob__slider').addClass('_d-none')
+            
+       
+              $('.cards_mob__slider').addClass('_d-none')
             $('.reviews__cards').removeClass('_d-none')
-            $('.reviews__cards').css('opacity', '1')
-          }, 500)
-        
+  
+
+          }, 600)
+          setTimeout(function(){$('.reviews__cards').css('opacity', '1')},650)
+          
   
           
         }
