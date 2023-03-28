@@ -480,26 +480,7 @@ $(window).on('load', function() {
     }
   });
 
-  $('#reviews__btn').on('click', function() {
-    if($(this).hasClass('reviews__btn_active')) {
-      // If "hide" button is clicked, animate the cards to the right
-      $('.reviews__cards').animate({left: '0'}, 500, function() {
-        $('.reviews__cards').addClass('_d-none');
-        $('.cards_mob__slider').removeClass('_d-none');
-        $('.cards_mob').css('opacity', '1');
-      });
-    } else {
-      // If "look closer" button is clicked, animate the cards to the left
-      $('.cards_mob').css('opacity', '0');
-      $('.reviews__cards').removeClass('_d-none');
-      $('.cards_mob__slider').addClass('_d-none');
-      $('.reviews__cards').animate({left: '-100%'}, 500, function() {
-        // $('.reviews__cards').css('opacity', '1');
-      });
-    }
 
-  });
-  
 
   // ANIMATE 
  
