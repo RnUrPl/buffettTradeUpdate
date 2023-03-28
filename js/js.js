@@ -287,36 +287,36 @@ $(window).on('load resize', function() {
 
 
 
-$(".prices__tab-swither input").on("change", function(){
-  if (($('input[name="prices-tabs"][value="2"]').is(":checked"))) {
-    $('.tab-swither__bg').addClass('_bg_right')
-    $('.tab-swither__bg').css('width', '180px')
+// Add event listener to prices tab switcher input
+$(".prices__tab-swither input").on("change", function() {
+  // If the second tab is selected
+  if ($('input[name="prices-tabs"][value="2"]').is(":checked")) {
+    // Update tab switcher background
+    $('.tab-swither__bg')
+      .addClass('_bg_right')
+      .css('width', ($(window).width() < 769) ? '75px' : '180px');
 
-    if($(window).width() < 769) {
-      $('.tab-swither__bg').css('width', '75px')
-      }
-      $('.label_2').css('font-weight', '700')
-      $('.label_1').css('font-weight', '400')
-      $('#tariffs-standard').removeClass('_active');
-      $('#tariffs-vip').addClass('_active');
-    
-      $('#tariffs-standard').fadeOut(100)
-      $('#tariffs-vip').fadeIn(1000);
-    } else {
-      $('.tab-swither__bg').css('width', '225px')
+    // Update tab labels
+    $('.label_2').css('font-weight', '700');
+    $('.label_1').css('font-weight', '400');
 
-      if($(window).width() < 769) {
-        $('.tab-swither__bg').css('width', '110px')
-      }
-      $('.tab-swither__bg').removeClass('_bg_right')
-      $('#tariffs-standard').addClass('_active')
-      $('#tariffs-vip').removeClass('_active')
-      $('.label_1').css('font-weight', '700')
-      $('.label_2').css('font-weight', '400')
-      $('#tariffs-standard').fadeIn(1000)
-    $('#tariffs-vip').fadeOut(100);
-    
-    };
+    // Update active tab content and animation
+    $('#tariffs-standard').removeClass('_active').fadeOut(100);
+    $('#tariffs-vip').addClass('_active').fadeIn(1000);
+  } else { // If the first tab is selected
+    // Update tab switcher background
+    $('.tab-swither__bg')
+      .removeClass('_bg_right')
+      .css('width', ($(window).width() < 769) ? '110px' : '225px');
+
+    // Update tab labels
+    $('.label_1').css('font-weight', '700');
+    $('.label_2').css('font-weight', '400');
+
+    // Update active tab content and animation
+    $('#tariffs-vip').removeClass('_active').fadeOut(100);
+    $('#tariffs-standard').addClass('_active').fadeIn(1000);
+  }
 });
    
 
@@ -448,12 +448,13 @@ $('#reviews__btn').on('click', function() {
           $('.cards_mob__slider').removeClass('_d-none')
           $('.cards_mob').css('opacity', '1')
         }
-      }  if(windowWidth > 768){
+      }
+        if(windowWidth > 768){
         $('.reviews__cards').css('opacity', '1')
       }
       
     },1000);
-    }),
+}),
 
     
    
@@ -462,6 +463,8 @@ $('#reviews__btn').on('click', function() {
   
     $('.cards_mob__slider').delay(1000).addClass('_d-none');
   }, 2000)
+
+  
 
 $(window).on('load', function() {
   if ($(window).width() < 768) {
@@ -477,6 +480,31 @@ $(window).on('load', function() {
     }
   });
 
+// Get the element to listen for touch events
+const reviewsCards = document.querySelector('.reviews__cards');
+
+// Set up initial touch coordinates
+let startX = 0;
+let startY = 0;
+
+// Add touch event listener to the element
+reviewsCards.addEventListener('touchstart', function(event) {
+  startX = event.touches[0].clientX;
+  startY = event.touches[0].clientY;
+});
+
+reviewsCards.addEventListener('touchend', function(event) {
+  const deltaX = event.changedTouches[0].clientX - startX;
+  const deltaY = event.changedTouches[0].clientY - startY;
+
+  // Check if the swipe is horizontal and long enough
+  if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY)) {
+    // If swipe is to the left, simulate click on "look closer" button
+    if (deltaX < 0) {
+      $('#reviews__btn').click();
+    }
+  }
+});
 
   // ANIMATE 
  
