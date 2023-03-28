@@ -1425,8 +1425,8 @@ margin: 0 10px;
 }
 .students-slider .slick-slide {
   opacity: 0;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 .students-slider .slick-active {
   opacity: 1;
@@ -1438,6 +1438,12 @@ margin: 0 10px;
   margin: 0 30px;
   overflow: visible;
 }
+
+.space{
+  width: 20px;
+}
+
+
 .students-slider .slick-arrow {
   z-index: 5;
   cursor: pointer;
@@ -1913,6 +1919,7 @@ margin: 0 10px;
   line-height: 23px;
 }
 .tariff__cost {
+  justify-content: space-between;
   font-weight: 700;
   font-size: 29px;
   margin-bottom: -25px;
@@ -1947,6 +1954,7 @@ margin: 0 10px;
 }
 
 .new-cost {
+  font-size: larger;
   display: none;
 }
 
@@ -2148,6 +2156,7 @@ margin: 0 10px;
   text-align: center;
 }
 .reviews__cards {
+  transition: opacity 0.5s ease-in-out;
   max-width: 2150px;
   margin: 0 auto;
   margin-bottom: 36px;
@@ -2243,7 +2252,15 @@ margin: 0 10px;
 .cards__item:last-child {
   margin-right: 0;
 }
-
+.cards_mob{
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+.cards_mob__slider{
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
 .cards_mob__slider .slick-arrow {
   font-size: 0;
   opacity: 0;

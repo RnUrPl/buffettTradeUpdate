@@ -324,7 +324,8 @@ setInterval(function(){
   if(isSail) {
     $('.new-cost').css('display', 'inline')
     $('.cost').addClass('cost__cross')
-  
+    $('cost').css('display', 'inline')
+    $('.cost').addClass('space')
     } else {
     
       $('.new-const').css('display', 'none')
@@ -387,6 +388,7 @@ if ($(window).width() < 768) {
   $('.cards_mob__slider').slick({
     centerMode: true,
     infinite: true,
+
     cssEase: 'ease',
     slidesToShow: 1,
   });
@@ -394,9 +396,10 @@ if ($(window).width() < 768) {
 
 windowWidth = $(window).width()
 $('#reviews__btn').on('click', function() {
-  
+  $('.reviews__cards').css('opacity', '0')
+    setTimeout(function() {
 
-if($('#reviews__btn').hasClass('reviews__btn_active')) {
+      if($('#reviews__btn').hasClass('reviews__btn_active')) {
         $('#reviews__btn').text('look closer')
         $('#reviews__btn').removeClass('reviews__btn_active')
         
@@ -406,40 +409,42 @@ if($('#reviews__btn').hasClass('reviews__btn_active')) {
           $('.row_2').appendTo('.cards__row_2')
           $('.row_3').appendTo('.cards__row_3')
         } else {
-          $('.cards_mob__slider').removeClass('_d-none')
-          $('.reviews__cards').removeClass('_d-none')
+          $('.cards_mob').css('opacity', '0')
+          setTimeout(function () {
+  
+            $('.cards_mob__slider').addClass('_d-none')
+            $('.reviews__cards').removeClass('_d-none')
+            $('.reviews__cards').css('opacity', '1')
+          }, 500)
+        
+  
+          
         }
           
   
-      }else {
+      } else {
   
         
         
-        
+        $('#reviews__btn').addClass('reviews__btn_active')
   
         if(windowWidth > 768) {
-
-    
           $('#reviews__btn').text('hide')
         $('.cards').addClass('cards_active')
         $('.review-card').appendTo('.cards__container')
-
-  
-          $('#reviews__btn').addClass('reviews__btn_active');
-
-
-        
         } else {
           $('#reviews__btn').text('back')
+          $('.reviews__cards').css('opacity', '1')
           $('.reviews__cards').addClass('_d-none')
           $('.cards_mob__slider').removeClass('_d-none')
+          $('.cards_mob').css('opacity', '1')
         }
-      } 
+      }  if(windowWidth > 768){
+        $('.reviews__cards').css('opacity', '1')
+      }
       
-})
-
-
-    
+    },1000);
+    }),
 
     
    
@@ -462,8 +467,6 @@ $(window).on('load', function() {
       
     }
   });
-
-
 
 
   // ANIMATE 
