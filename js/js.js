@@ -195,18 +195,17 @@ $('.team-slider').on('afterChange', function(event, slick,currentSlide) {
 
 // Students
 $('.students-slider').slick({
-  infinite:false,
+  infinite:true,
   initialSlide: 1, // set starting slide index to 1 (second slide)
 cssEase: 'linear',
-// arrows:false,
+initialSlide: 9,
 prevArrow: "<i class='icon-arrow prev'></i>",
 nextArrow: "<i class='icon-arrow next'></i>",
-
 slidesToShow: 1,
 slidesToScroll: 1,
 responsive: [
   {
-    breakpoint: 992,
+    breakpoint: 768,
     settings: {
       arrows: false,
       }
@@ -214,27 +213,7 @@ responsive: [
 ],
 });
 
-$('.students-slider').on('afterChange', function(event, slick,currentSlide) {
-  // Get the total number of slides
-  
-  console.log(currentSlide)
-  if ( currentSlide=== 0) {
-    $(".prev").prop('disabled', true).css('visibility', 'hidden');
-  } else {
-    $(".prev").prop('disabled', false).css('visibility', 'visible');
-  }
-  if (currentSlide === 2  ) {
-    $(".next").prop('disabled', true).css('visibility', 'hidden');
-  }
-  else if(currentSlide === 9){
-    setTimeout(function() {
-      $('.team-slider').slick("slickGoTo", 0);
-    }, 0);
-  }
-  else{
-    $(".next").prop('disabled', false).css('visibility', 'visible');
-  }
-});
+
 
 
 
@@ -498,3 +477,5 @@ $(window).on('load', function() {
     $(window).on("scroll", function() {
       animate()
     });
+
+    
