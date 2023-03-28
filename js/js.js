@@ -480,31 +480,26 @@ $(window).on('load', function() {
     }
   });
 
-// Get the element to listen for touch events
-const reviewsCards = document.querySelector('.reviews__cards');
-
-// Set up initial touch coordinates
-let startX = 0;
-let startY = 0;
-
-// Add touch event listener to the element
-reviewsCards.addEventListener('touchstart', function(event) {
-  startX = event.touches[0].clientX;
-  startY = event.touches[0].clientY;
-});
-
-reviewsCards.addEventListener('touchend', function(event) {
-  const deltaX = event.changedTouches[0].clientX - startX;
-  const deltaY = event.changedTouches[0].clientY - startY;
-
-  // Check if the swipe is horizontal and long enough
-  if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY)) {
-    // If swipe is to the left, simulate click on "look closer" button
-    if (deltaX < 0) {
-      $('#reviews__btn').click();
+  $('#reviews__btn').on('click', function() {
+    if($(this).hasClass('reviews__btn_active')) {
+      // If "hide" button is clicked, animate the cards to the right
+      $('.reviews__cards').animate({left: '0'}, 500, function() {
+        $('.reviews__cards').addClass('_d-none');
+        $('.cards_mob__slider').removeClass('_d-none');
+        $('.cards_mob').css('opacity', '1');
+      });
+    } else {
+      // If "look closer" button is clicked, animate the cards to the left
+      $('.cards_mob').css('opacity', '0');
+      $('.reviews__cards').removeClass('_d-none');
+      $('.cards_mob__slider').addClass('_d-none');
+      $('.reviews__cards').animate({left: '-100%'}, 500, function() {
+        // $('.reviews__cards').css('opacity', '1');
+      });
     }
-  }
-});
+
+  });
+  
 
   // ANIMATE 
  
