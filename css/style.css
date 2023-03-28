@@ -2183,11 +2183,30 @@ margin: 0 10px;
   text-align: center;
 }
 .reviews__cards {
-  transition: opacity 0.2s ease-in-out;
+  transition: opacity 2s ease-in-out;
   max-width: 2150px;
   margin: 0 auto;
   margin-bottom: 36px;
 }
+.loader {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid #3498db;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .reviews__btn {
   font-weight: 400;
   line-height: 24px;
@@ -2542,6 +2561,11 @@ margin: 0 10px;
 }
 .img-wrapper {
   margin-bottom: 20px;
+}
+
+.container-collapsed {
+  height: 0;
+  overflow: hidden;
 }
 
 

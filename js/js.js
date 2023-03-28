@@ -390,7 +390,7 @@ if ($(window).width() < 768) {
   $('.cards_mob__slider').slick({
     centerMode: true,
     infinite: true,
-
+    autoplay:500,
     cssEase: 'ease',
     slidesToShow: 1,
   });
@@ -402,8 +402,10 @@ if ($(window).width() < 768) {
 windowWidth = $(window).width()
 $('#reviews__btn').on('click', function() {
   $('.reviews__cards').css('opacity', '0')
-    setTimeout(function() {
-
+  $('.loader').show(); 
+  // Show the loader before initializing the slider
+      setTimeout(function() {
+     
       if($('#reviews__btn').hasClass('reviews__btn_active')) {
         $('#reviews__btn').text('look closer')
         $('#reviews__btn').removeClass('reviews__btn_active')
@@ -443,7 +445,6 @@ $('#reviews__btn').on('click', function() {
         $('.review-card').appendTo('.cards__container')
         } else {
           $('#reviews__btn').text('back')
-          // $('.reviews__cards').css('opacity', '1')
           $('.reviews__cards').addClass('_d-none')
           $('.cards_mob__slider').removeClass('_d-none')
           $('.cards_mob').css('opacity', '1')
