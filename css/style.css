@@ -1429,6 +1429,8 @@ margin: 0 10px;
   transition: opacity 1s ease-in-out;
 }
 .students-slider .slick-active {
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   opacity: 1;
 }
 .students-slider .slick-track {
@@ -1515,6 +1517,8 @@ margin: 0 10px;
   line-height: 23px;
 }
 .student__photo {
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 376px;
           flex: 0 1 376px;
@@ -1532,6 +1536,8 @@ margin: 0 10px;
   z-index: 2;
 }
 .student__content {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   max-width: 512px;
   position: relative;
   -webkit-box-orient: vertical;
@@ -1547,6 +1553,9 @@ margin: 0 10px;
   display: none;
 }
 .student__content_active {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 1;
   top: 0;
   z-index: 5;
   padding: 64px 10px 91px 10px;
@@ -1558,11 +1567,15 @@ margin: 0 10px;
   overflow-y: scroll !important;
 }
 .student__content_active .student__text {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   top: 0;
   width: 100%;
   height: auto;
 }
 .student__content_active .student__subtitle {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   height: 0;
 }
 .student__content_active .student__name {
@@ -1571,6 +1584,8 @@ margin: 0 10px;
   z-index: 3;
 }
 .student__content_active .student__ask {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   display: block;
   z-index: 3;
   position: relative;
@@ -1581,16 +1596,22 @@ margin: 0 10px;
   margin-top: 35px;
 }
 .student__content_active::before {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   left: 11px !important;
   top: 0 !important;
 }
 .student__content_active:after {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   position: static !important;
   display: block;
   -webkit-transform: rotate(180deg) translate(-200px, 40px) !important;
           transform: rotate(180deg) translate(-200px, 40px) !important;
 }
 .student__content::before {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   z-index: 10;
   right: 0;
   top: -80px;
@@ -1604,6 +1625,8 @@ margin: 0 10px;
   background-position: center;
 }
 .student__content:after {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   z-index: 10;
