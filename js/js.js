@@ -149,8 +149,6 @@ $('.team-slider').slick({
       settings: {
         arrows:false,
         slidesToShow: 1,
-        // centerMode:true,
-        // infinite:true,
       }
     },
   ]
@@ -296,9 +294,6 @@ $(".prices__tab-swither input").on("change", function() {
       .addClass('_bg_right')
       .css('width', ($(window).width() < 769) ? '75px' : '180px');
 
-    // Update tab labels
-    $('.label_2').css('font-weight', '700');
-    $('.label_1').css('font-weight', '400');
 
     // Update active tab content and animation
     $('#tariffs-standard').removeClass('_active').fadeOut(100);
@@ -310,8 +305,7 @@ $(".prices__tab-swither input").on("change", function() {
       .css('width', ($(window).width() < 769) ? '110px' : '225px');
 
     // Update tab labels
-    $('.label_1').css('font-weight', '700');
-    $('.label_2').css('font-weight', '400');
+
 
     // Update active tab content and animation
     $('#tariffs-vip').removeClass('_active').fadeOut(100);
@@ -364,7 +358,6 @@ $(window).on('load', function() {
             settings: {
               slidesToShow: 1,
               infinite: false,
-              slidesToScroll: 1,
  
             }
           }],
