@@ -1951,6 +1951,15 @@ margin: 0 10px;
   display: block;
   text-align: center;
 }
+
+.cost1{
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 29px;
+  margin-bottom: -25px;
+  display: block;
+  text-align: center;
+}
 .tariff__btn {
   background-color: #fff;
   border: 1px #fff solid;
@@ -2183,7 +2192,7 @@ margin: 0 10px;
   text-align: center;
 }
 .reviews__cards {
-  transition: opacity 2s ease-in-out;
+  transition: opacity s ease-in-out;
   max-width: 2150px;
   margin: 0 auto;
   margin-bottom: 36px;
@@ -2195,7 +2204,7 @@ margin: 0 10px;
   border: 8px solid #f3f3f3;
   border-radius: 50%;
   border-top: 8px solid #3498db;
-  animation: spin 2s linear infinite;
+  animation: spin 2s l dar infinite;
 }
 
 @keyframes spin {
@@ -2299,7 +2308,6 @@ margin: 0 10px;
   margin-right: 0;
 }
 .cards_mob{
-  opacity: 0;
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
