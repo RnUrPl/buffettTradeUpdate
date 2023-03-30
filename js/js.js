@@ -223,7 +223,6 @@ $(window).on('load', function() {
 // Students
 $('.students-slider').slick({
   infinite:true,
-  initialSlide: 1, // set starting slide index to 1 (second slide)
 cssEase: 'linear',
 initialSlide: 9,
 prevArrow: "<i class='icon-arrow prev'></i>",
@@ -308,7 +307,7 @@ $(".prices__tab-swither input").on("change", function() {
 
 
     // Update active tab content and animation
-    $('#tariffs-vip').removeClass('_active').fadeOut(1000);
+    $('#tariffs-vip').removeClass('_active').fadeOut(100);
     $('#tariffs-standard').addClass('_active').fadeIn(1000);
   }
 });
@@ -343,7 +342,7 @@ $(window).on('load resize', function() {
 });
 
 
-$(window).on('load', function() {
+$(window).on('load resize', function() {
     if ($(window).width() < 1150) {
       $('.prices__slider').slick({
         arrows: false,
@@ -356,7 +355,6 @@ $(window).on('load', function() {
             breakpoint: 768,
             settings: {
               slidesToShow: 1,
-              infinite: false,
  
             }
           }],
@@ -366,11 +364,11 @@ $(window).on('load', function() {
   
   });
 
-setTimeout(function () {
+// setTimeout(function () {
   
-  $('#tariffs-vip').delay(1000).fadeOut();
-  $('input[name="prices-tabs"][value="1"]').trigger('click');
-}, 2000)
+  $('#tariffs-vip').fadeOut();
+//   $('input[name="prices-tabs"][value="1"]').trigger('click');
+// }, 2000)
 
 
 
