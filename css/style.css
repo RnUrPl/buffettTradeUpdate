@@ -902,6 +902,11 @@ a, a:hover, a:active {
   overflow-x: auto;
   white-space: nowrap;
 }
+.team__slider1 {
+  /* margin: 20px; */
+  overflow-x: auto;
+  white-space: nowrap;
+}
 .team-slider__item {
 
   margin: 38px;
@@ -910,10 +915,32 @@ a, a:hover, a:active {
   vertical-align: top;
   white-space: normal;
 }
+.team-slider1__item {
+
+  margin: 38px;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  white-space: normal;
+}
+
+.team-slider1__item .slick-slide{
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
 
 .team-slider .slick-slide {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+.team-slider1 .slick-arrow {
+  z-index: 5;
+  cursor: pointer;
+  position: absolute;
+  font-size: 40px;
+  line-height: 40px;
+  color: rgba(59, 62, 69, 0.5019607843);
+  bottom: 30%;
 }
 
 .team-slider .slick-arrow {
@@ -968,6 +995,25 @@ a, a:hover, a:active {
       -ms-flex-align: start;
           align-items: start;
 }
+
+.team__slider1 .slick-track {
+  width: 400px;
+}
+
+.team-member1 {
+  width: 278px;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
 .team-member__img-wrapper {
   width: 100%;
   margin-bottom: 23px;
@@ -1004,11 +1050,14 @@ a, a:hover, a:active {
 
 @media (max-width: 767px) {
 
-.team-slider__item {
+.team-slider1__item {
 
 margin: 0 10px;
 }
 .team__slider .slick-track {
+  width: 400px;
+}
+.team__slider1 .slick-track {
   width: 400px;
 }
 }

@@ -148,10 +148,24 @@ $('.team-slider').slick({
       breakpoint: 768,
       settings: {
         arrows:false,
+        fade:true,
         slidesToShow: 1,
+        infinite:true,
+        centerMode:true
       }
     },
   ]
+  
+});
+
+$('.team-slider1').slick({
+  infinite: true,
+  centerMode:true,
+  cssEase: 'linear',
+arrows:false,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  
   
 });
 
@@ -162,6 +176,14 @@ function jumpBack() {
 }
 
 
+$('.team-slider').on("afterChange",function (currentSlide) {
+  if (currentSlide === 5) {
+    // $(".next").on('click',function(){
+      jumpBack()
+    // })
+  }
+})
+
 $('.team-slider').on('afterChange', function(event, slick,currentSlide) {
   console.log(currentSlide)
   if ( currentSlide=== 0) {
@@ -169,9 +191,10 @@ $('.team-slider').on('afterChange', function(event, slick,currentSlide) {
   } else {
     $(".prev").prop('disabled', false).css('visibility', 'visible');
   }
-  if ((currentSlide === 8 && $(window).width() > 768 &&  $(window).width() < 992)||  (currentSlide === 6 &&  $(window).width() > 1250)||  (currentSlide === 7 && $(window).width() > 992 &&  $(window).width() < 1250) ||  (currentSlide === 9 &&  $(window).width() < 768) ) {
-    $(".next").prop('disabled', true).css('visibility', 'hidden');
-      jumpBack();
+  if ((currentSlide === 7 && $(window).width() > 768 &&  $(window).width() < 992)||  (currentSlide === 5 && $(window).width() > 1250)||  (currentSlide === 6 && $(window).width() > 992 &&  $(window).width() < 1250)  ) {
+       $(".next").on('click',function(){
+        jumpBack()
+        })
   }
   // else if(currentSlide === 9){
   //   setTimeout(function() {
@@ -180,6 +203,12 @@ $('.team-slider').on('afterChange', function(event, slick,currentSlide) {
   // }
   else{
     $(".next").prop('disabled', false).css('visibility', 'visible');
+  }
+});
+
+$(window).on('load', function() {
+  if ($(window).width() < 768) {
+    $('.team-slider').css('margin-left','0')
   }
 });
 
