@@ -284,35 +284,6 @@ $(window).on('load resize', function() {
 
 // Prices
 
-// $('.tariffs').slick({
-//   infinite: false,
-//   cssEase: 'linear',
-//   arrows:false,
-//   // prevArrow: "<i id='btn' class='icon-arrow prev'></i>",
-//   // nextArrow: "<i class='icon-arrow next'></i>",
-//   slidesToShow: 1,
-//   slidesToScroll: 1,
-//   responsive: [
-//     // {
-//     //   breakpoint: 992,
-//     //   settings: {
-//     //     slidesToShow: 2
-//     //   }
-//     // },
-//     {
-//       breakpoint: 768,
-//       settings: {
-//         slidesToShow: 1,
-//         // centerMode: true,
-//         infinite:false,
- 
-//       }
-//     },
-//   ]
-  
-// });
-
-
 
 // Add event listener to prices tab switcher input
 $(".prices__tab-swither input").on("change", function() {
@@ -358,7 +329,7 @@ setInterval(function(){
 }, 1000);
 
 
-$(window).on('load', function() {
+$(window).on('load resize', function() {
 
   if ($(window).width() < 767) {
     $('.label_1').text('Standard')
