@@ -337,7 +337,7 @@ $(".prices__tab-swither input").on("change", function() {
 
 
     // Update active tab content and animation
-    $('#tariffs-vip').removeClass('_active').fadeOut(100);
+    $('#tariffs-vip').removeClass('_active').fadeOut(1000);
     $('#tariffs-standard').addClass('_active').fadeIn(1000);
   }
 });
@@ -378,7 +378,6 @@ $(window).on('load', function() {
         arrows: false,
         cssEase: 'ease',
         initialSlide: 1, // set starting slide index to 1 (second slide)
-        slidesToShow: 3,
         infinite: false,
         // fade: true, // add fade effect
         responsive: [
