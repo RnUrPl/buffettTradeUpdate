@@ -297,6 +297,8 @@ $(".prices__tab-swither input").on("change", function() {
     // Update active tab content and animation
     $('#tariffs-standard').removeClass('_active').fadeOut(100);
     $('#tariffs-vip').addClass('_active').fadeIn(1000);
+    $('.tariff-tabs__item_small').css('width','320px')
+   
   } else { // If the first tab is selected
     // Update tab switcher background
     $('.tab-swither__bg')
@@ -307,6 +309,7 @@ $(".prices__tab-swither input").on("change", function() {
 
 
     // Update active tab content and animation
+    $('.tariff-tabs__item_small').css('width','320px')
     $('#tariffs-vip').removeClass('_active').fadeOut(100);
     $('#tariffs-standard').addClass('_active').fadeIn(1000);
   }
@@ -364,11 +367,11 @@ $(window).on('load resize', function() {
   
   });
 
-// setTimeout(function () {
+setTimeout(function () {
   
   $('#tariffs-vip').fadeOut();
-//   $('input[name="prices-tabs"][value="1"]').trigger('click');
-// }, 2000)
+  $('input[name="prices-tabs"][value="1"]').trigger('click');
+},1000)
 
 
 

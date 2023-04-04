@@ -2130,6 +2130,11 @@ margin: 0 10px;
   }
 }
 @media screen and (max-width: 768px) {
+
+  .tariff-tabs__item {
+    margin: 0 5px;
+    width: 335px;
+  }
   .prices {
     padding: 50px 0 35px 0;
     overflow: hidden;
@@ -2222,6 +2227,7 @@ margin: 0 10px;
           align-items: center;
 }
 ._bg_right .tariff-tabs__item {
+  width: 335px;
   max-width: 335px;
 }
 .reviews {
